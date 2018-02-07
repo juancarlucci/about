@@ -16,6 +16,9 @@ Create wireframe using Figma
 
 Create Client side including Portfolio, About, and Contact sections
 
+Optimize images and files (compression, minification, etc.)
+
+
 
 ## Unsolved problems:
 
