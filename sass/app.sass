@@ -11,3 +11,64 @@ $break-small: 27em
 
 *
   box-sizing: border-box
+
+// .wrapper
+//   grid-template-columns: 50px 50px 50px 50px
+//   grid-template-rows: auto
+//   grid-template-areas:
+//     "header header header header"
+//     "nav   nav   nav    nav"
+//     "footer footer footer footer"
+
+header
+  grid-area: header
+  height: 100vh
+  background-color: #EDEDED
+
+nav
+  grid-area: nav
+
+#projects
+  grid-area: projects
+  background-color: #FFFFFF
+
+
+footer
+  grid-area: footer
+
+// .flex
+//   display: flex
+//   flex-flow: row wrap
+//
+// .wrap
+//   max-width: 78em
+//   width: 100%
+//   margin: 0 auto
+
+.flex-container
+  padding: 0
+  margin: 0
+  list-style: none
+
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+  -webkit-flex-flow: row wrap
+  justify-content: space-around
+
+
+.flex-item
+  background: tomato
+  padding: 5px
+  width: 200px
+  height: 150px
+  margin-top: 10px
+
+  line-height: 150px
+  color: white
+  font-weight: bold
+  font-size: 3em
+  text-align: center
