@@ -14,30 +14,41 @@
   <title>about</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo:400,700i%7CBaloo+Tammudui%7CFredericka+the+Greati%7CLife+Savers:400,700i%7CMegrim" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="./css/app.css">
+
+  <!-- Scripts-->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/app.js"></script>
+  <!-- sweetAlert -->
+  <!-- <script src="js/sweetalert.min.js"></script> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+
 </head>
 
 <body>
   <div class="wrapper docScroller">
    <div class="page">
      <header class="vertically-centered inside" id="site-header">
-
-        <h1 id="title">juan carlos collins</h1>
-        <p>web development | data visualization</p>
-        <nav>
-          <a href="#projects">projects</a>
-          <a href="#">about</a>
-          <a href="#">contact</a>
-        </nav>
-
+        <!-- //without this div, h1, p and nav behave as inline -->
+        <div class="home">
+          <h1 id="title">JUAN CARLOS COLLINS</h1>
+          <h2>web development | data visualization</h2>
+          <nav>
+            <a href="#projects">projects</a>
+            <a href="#">about</a>
+            <a href="#">contact</a>
+          </nav>
+       </div>
 
 
      </header>
     </div>
   <!-- <section id="projects-wrapper"> -->
     <!-- emmet command ul>li.item${}*6>a then tab-->
+
+    <div>
     <section id="projects" class="gallery page">
 
       <div class="flex-container inside">
@@ -55,8 +66,10 @@
         </div>
       </div>
     </section>
+  </div>
   <!-- </section> -->
 
+</div><!-- end wrapper-->
 
     <footer class="page">
       <div class="inside">
@@ -68,13 +81,6 @@
       </div>
     </footer>
 
-  </wrapper>
-    <!-- Scripts-->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/app.js"></script>
-    <!-- sweetAlert -->
-    <!-- <script src="js/sweetalert.min.js"></script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
 </body>
 
 </html>

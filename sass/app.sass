@@ -1,5 +1,5 @@
 // variables
-$fontMain: "Relaway"
+$fontMain: "Fredericka_the_Great",Arial,sans-serif
 $fontPara: "Lato"
 
 //queries
@@ -20,11 +20,16 @@ $break-small: 27em
 //     "nav   nav   nav    nav"
 //     "footer footer footer footer"
 
+html,
+body
+  font-family: $fontMain
+  width: 100%
+
 header
   grid-area: header
   height: 100vh
 
-  background-color: #EDEDED
+  background-color: #fff
   // background-image: url("../images/home_header_bg.jpg")
   background-repeat: no-repeat
   background-size: cover
@@ -33,32 +38,53 @@ header
 
   padding-bottom: 3%
   h1
-    font-size: 3em
+    font-size: 3.6em
+    font-family: $fontMain
+    color: black
     // background: linear-gradient( #30CFD0 0%, #330867 100%)
-    background: linear-gradient( #EDEDED 0%, #330867 100%)
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
+    // background: linear-gradient( #EDEDED 0%, #330867 100%)
+    // -webkit-background-clip: text
+    // -webkit-text-fill-color: transparent
   h1,
   h2,
   a
-    color: #fff
+    font-family: $fontMain
+    text-align: center
+    // color: #fff
+p
+  font-family: $fontMain
+  text-align: center
 
 nav
   grid-area: nav
   display: flex
   width: 50%
   justify-content: space-around
+  margin: auto
+  padding: 2em 0em
+  padding-bottom: 11em
   a
-  // display: block
+    font-family: $fontMain, sans-serif
+    font-weight: 600
+    text-decoration: none
+    color: #899ead
+    letter-spacing: 0.063em
+    font-size: 1.125em
+    margin: 0 1.250em
+    border-bottom: 0.125em solid transparent
+    &:hover
+      border-color: #899ead
 
 #projects
   grid-area: projects
-  height: 100vh
+  // height: 100vh
   background-color: #FFFFFF
-
-
-footer
-  grid-area: footer
+  // overflow-y: auto
+  // max-width: 60em
+  margin: auto
+  display: flex
+  h1
+    // height: 30px
 
 // .flex
 //   display: flex
@@ -79,6 +105,8 @@ footer
   display: -ms-flexbox
   display: -webkit-flex
   display: flex
+  // overflow-y: auto
+  // height: 100vh
 
   -webkit-flex-flow: row wrap
   justify-content: space-around
@@ -86,16 +114,17 @@ footer
 
 .flex-item
   background: tomato
-  padding: 5px
-  width: 200px
-  height: 150px
-  margin-top: 10px
+  padding: 0.313em
+  width: 12.500em
+  height: 13.500em
+  margin-top: 0.626em
 
-  line-height: 150px
+  line-height: 9.375em
   color: white
   font-weight: bold
   font-size: 3em
   text-align: center
+
 
 .vertically-centered
   display: -webkit-box
@@ -109,3 +138,8 @@ footer
   justify-content: center
   -ms-flex-wrap:  wrap
   flex-wrap:  wrap
+
+footer
+  grid-area: footer
+  background-color: #899ead
+  margin-top: 3em

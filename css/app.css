@@ -1,38 +1,59 @@
 * {
   box-sizing: border-box; }
 
+html,
+body {
+  font-family: "Fredericka_the_Great", Arial, sans-serif;
+  width: 100%; }
+
 header {
   grid-area: header;
   height: 100vh;
-  background-color: #EDEDED;
+  background-color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   padding-bottom: 3%; }
   header h1 {
-    font-size: 3em;
-    background: linear-gradient(#EDEDED 0%, #330867 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    font-size: 3.6em;
+    font-family: "Fredericka_the_Great", Arial, sans-serif;
+    color: black; }
   header h1,
   header h2,
   header a {
-    color: #fff; }
+    font-family: "Fredericka_the_Great", Arial, sans-serif;
+    text-align: center; }
+
+p {
+  font-family: "Fredericka_the_Great", Arial, sans-serif;
+  text-align: center; }
 
 nav {
   grid-area: nav;
   display: flex;
   width: 50%;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin: auto;
+  padding: 2em 0em;
+  padding-bottom: 11em; }
+  nav a {
+    font-family: "Fredericka_the_Great", Arial, sans-serif, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: #899ead;
+    letter-spacing: 0.063em;
+    font-size: 1.125em;
+    margin: 0 1.25em;
+    border-bottom: 0.125em solid transparent; }
+    nav a:hover {
+      border-color: #899ead; }
 
 #projects {
   grid-area: projects;
-  height: 100vh;
-  background-color: #FFFFFF; }
-
-footer {
-  grid-area: footer; }
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex; }
 
 .flex-container {
   padding: 0;
@@ -48,11 +69,11 @@ footer {
 
 .flex-item {
   background: tomato;
-  padding: 5px;
-  width: 200px;
-  height: 150px;
-  margin-top: 10px;
-  line-height: 150px;
+  padding: 0.313em;
+  width: 12.5em;
+  height: 13.5em;
+  margin-top: 0.626em;
+  line-height: 9.375em;
   color: white;
   font-weight: bold;
   font-size: 3em;
@@ -70,5 +91,10 @@ footer {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
+
+footer {
+  grid-area: footer;
+  background-color: #899ead;
+  margin-top: 3em; }
 
 /*# sourceMappingURL=app.css.map */
