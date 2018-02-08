@@ -20,43 +20,52 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <nav>
-      <a href="#">About</a>
-      <a href="#">Gallery</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-    </nav>
-    <header id="site-header">
-      <h1>Juan Carlos Collins</h1>
-    </header>
+  <div class="wrapper docScroller">
+   <div class="page">
+     <header class="vertically-centered inside" id="site-header">
 
+        <h1>Juan Carlos Collins</h1>
+        <p>web development | data visualization</p>
+        <nav>
+          <a href="#">projects-wrapper</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+
+
+
+     </header>
+    </div>
   <!-- <section id="projects-wrapper"> -->
     <!-- emmet command ul>li.item${}*6>a then tab-->
-    <section id="projects" class="gallery">
+    <section id="projects" class="gallery page">
 
+      <div class="flex-container inside">
 
         <h2>Projects</h2>
 
 
-      <div class="flex-container">
-        <img class="flex-item" src="images/map.jpg" alt="">
-        <img class="flex-item" src="images/ProjP.png" alt="">
-        <img class="flex-item" src="images/Code.png" alt="">
-        <img class="flex-item" src="images/line_graph.png" alt="">
-        <img class="flex-item" src="images/line_graph3.png" alt="">
-        <img class="flex-item" src="images/overview.png" alt="">
+        <div class="flex-container">
+          <img class="flex-item" src="images/map.jpg" alt="">
+          <img class="flex-item" src="images/ProjP.png" alt="">
+          <img class="flex-item" src="images/Code.png" alt="">
+          <img class="flex-item" src="images/line_graph.png" alt="">
+          <img class="flex-item" src="images/line_graph3.png" alt="">
+          <img class="flex-item" src="images/overview.png" alt="">
+        </div>
       </div>
     </section>
   <!-- </section> -->
 
 
-    <footer>
-     <input class="input name" id="user_email2" placeholder="email address" type="text">
-     <input class="input submit" type="submit" value="Keep In Touch">
-      <section class="lineCopyRight">
-        <p class="copyright">&#169; 2016 Juan Carlos Collins</p>
-      </section>
+    <footer class="page">
+      <div class="inside">
+       <input class="input name" id="user_email2" placeholder="email address" type="text">
+       <input class="input submit" type="submit" value="Keep In Touch">
+        <section class="lineCopyRight">
+          <p class="copyright">&#169; 2016 Juan Carlos Collins</p>
+        </section>
+      </div>
     </footer>
 
   </wrapper>
