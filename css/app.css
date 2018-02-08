@@ -51,9 +51,14 @@ nav {
 
 #projects {
   grid-area: projects;
+  height: 100vh;
   background-color: #FFFFFF;
+  max-width: 45em;
   margin: auto;
   display: flex; }
+  @media screen and (max-width: 27em) {
+    #projects {
+      height: 1180px; } }
 
 .flex-container {
   padding: 0;
@@ -70,8 +75,7 @@ nav {
 .flex-item {
   background: tomato;
   padding: 0.313em;
-  width: 12.5em;
-  height: 13.5em;
+  width: 200px;
   margin-top: 0.626em;
   line-height: 9.375em;
   color: white;

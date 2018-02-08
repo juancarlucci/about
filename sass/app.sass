@@ -77,23 +77,15 @@ nav
 
 #projects
   grid-area: projects
-  // height: 100vh
+  height: 100vh
   background-color: #FFFFFF
   // overflow-y: auto
-  // max-width: 60em
+  max-width: 45em
   margin: auto
   display: flex
-  h1
-    // height: 30px
-
-// .flex
-//   display: flex
-//   flex-flow: row wrap
-//
-// .wrap
-//   max-width: 78em
-//   width: 100%
-//   margin: 0 auto
+  @media screen and (max-width: $break-small)
+    height: 1180px
+    // display: block
 
 .flex-container
   padding: 0
@@ -115,8 +107,10 @@ nav
 .flex-item
   background: tomato
   padding: 0.313em
-  width: 12.500em
-  height: 13.500em
+  // width: 12.500em
+  // height: 13.500em
+  width: 200px
+  // height: auto
   margin-top: 0.626em
 
   line-height: 9.375em
