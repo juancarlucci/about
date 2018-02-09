@@ -59,6 +59,8 @@ nav {
   @media screen and (max-width: 27em) {
     #projects {
       height: 1180px; } }
+  #projects p {
+    flex-wrap: wrap; }
 
 .flex-container {
   padding: 0;
@@ -71,17 +73,6 @@ nav {
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: space-around; }
-
-.flex-item {
-  background: tomato;
-  padding: 0.313em;
-  width: 200px;
-  margin-top: 0.626em;
-  line-height: 9.375em;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center; }
 
 .vertically-centered {
   display: -webkit-box;
@@ -100,5 +91,48 @@ footer {
   grid-area: footer;
   background-color: #899ead;
   margin-top: 3em; }
+
+.flip {
+  height: 199px;
+  width: 200px; }
+
+.flip img {
+  width: 200px;
+  height: auto; }
+
+.flip .back {
+  background: #2184cd;
+  color: #fff;
+  text-align: center; }
+
+.back nav {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  flex-direction: column;
+  position: relative;
+  top: -19px;
+  left: -50px;
+  justify-content: space-around; }
+  .back nav a {
+    display: block;
+    width: 200px; }
+
+.demo-link {
+  background-color: orangered;
+  margin: auto; }
+
+.storyboard-link {
+  background-color: blue;
+  margin: auto; }
+
+.code-link {
+  background-color: green;
+  margin: auto; }
+
+#storyboards {
+  width: 100%;
+  height: 100vh;
+  background-color: lightblue; }
 
 /*# sourceMappingURL=app.css.map */

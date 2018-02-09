@@ -14,4 +14,22 @@ $(document).ready(function(){
 //   }, 1500 );
 //
 // });//emd click
+
+$(function(){
+    $(".flip").flip({
+        trigger: 'hover'
+    });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+}); //end doc ready

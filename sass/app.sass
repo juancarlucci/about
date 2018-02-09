@@ -6,7 +6,8 @@ $fontPara: "Lato"
 $information-phone: "only screen and (max-width : 20.000em)"
 $break-small: 27em
 
-// styles
+
+
 // styles
 
 *
@@ -77,6 +78,7 @@ nav
 
 #projects
   grid-area: projects
+  // https://stackoverflow.com/questions/21409023/responsive-images-within-nested-flexboxes-are-spilling-outside-of-their-parents?rq=1
   height: 100vh
   background-color: #FFFFFF
   // overflow-y: auto
@@ -86,6 +88,8 @@ nav
   @media screen and (max-width: $break-small)
     height: 1180px
     // display: block
+  p
+    flex-wrap: wrap
 
 .flex-container
   padding: 0
@@ -104,20 +108,20 @@ nav
   justify-content: space-around
 
 
-.flex-item
-  background: tomato
-  padding: 0.313em
-  // width: 12.500em
-  // height: 13.500em
-  width: 200px
-  // height: auto
-  margin-top: 0.626em
-
-  line-height: 9.375em
-  color: white
-  font-weight: bold
-  font-size: 3em
-  text-align: center
+// .flex-item
+//   background: tomato
+//   padding: 0.313em
+//   // width: 12.500em
+//   // height: 13.500em
+//   // width: 200px
+//   // height: auto
+//   margin-top: 0.626em
+//
+//   line-height: 9.375em
+//   color: white
+//   font-weight: bold
+//   font-size: 3em
+//   text-align: center
 
 
 .vertically-centered
@@ -137,3 +141,49 @@ footer
   grid-area: footer
   background-color: #899ead
   margin-top: 3em
+
+.flip
+    height: 199px
+    width: 200px
+    // margin: 0 auto
+
+.flip img
+    width: 200px
+    height: auto
+
+.flip .back
+    background: #2184cd
+    color: #fff
+    text-align: center
+
+.back nav
+  position: relative
+  top: 0px
+  left: 0px
+  flex-direction: column
+  position: relative
+  top: -19px
+  left: -50px
+  justify-content: space-around
+  // text-align: center
+  a
+    display: block
+    width: 200px
+
+
+
+.demo-link
+  background-color: orangered
+  margin: auto
+
+.storyboard-link
+  background-color: blue
+  margin: auto
+.code-link
+  background-color: green
+  margin: auto
+
+#storyboards
+  width: 100%
+  height: 100vh
+  background-color: lightblue

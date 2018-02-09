@@ -19,7 +19,9 @@
   <link rel="stylesheet" href="./css/app.css">
 
   <!-- Scripts-->
+
   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery.flip.min.js"></script>
   <script src="js/app.js"></script>
   <!-- sweetAlert -->
   <!-- <script src="js/sweetalert.min.js"></script> -->
@@ -36,7 +38,7 @@
           <h1 id="title">JUAN CARLOS COLLINS</h1>
           <h2>web development | data visualization</h2>
           <nav>
-            <a href="#projects">projects</a>
+            <a href="#projects-title">projects</a>
             <a href="#">about</a>
             <a href="#">contact</a>
           </nav>
@@ -48,26 +50,95 @@
   <!-- <section id="projects-wrapper"> -->
     <!-- emmet command ul>li.item${}*6>a then tab-->
 
-    <div>
+    <div id="projects-title">
+    <h2>Projects</h2>
+    </div>
+
+    <div class="allowsBlock">
     <section id="projects" class="gallery page">
+
+
 
       <div class="flex-container inside">
 
-        <h2>Projects</h2>
+        <!-- <div class="flex-container"> -->
 
+          <div class="flex-item flip">
+            <div class="front">
+                <img src="images/underscore.png" alt="" />
+                <h3>Rewrote the first 15 functions</h3>
+            </div>
+            <div class="back">
+                <img class="flex-item" src="images/Code.png" alt="">
+                <h3>Some Text in the Back!</h3>
+            </div>
+          </div>
 
-        <div class="flex-container">
-          <img class="flex-item" src="images/map.jpg" alt="">
-          <img class="flex-item" src="images/ProjP.png" alt="">
-          <img class="flex-item" src="images/Code.png" alt="">
-          <img class="flex-item" src="images/line_graph.png" alt="">
-          <img class="flex-item" src="images/line_graph3.png" alt="">
-          <img class="flex-item" src="images/overview.png" alt="">
-        </div>
-      </div>
+          <div class="flex-item flip">
+            <div class="front">
+                <img src="images/map.jpg" alt="" />
+            </div>
+            <div class="back">
+              <nav class="card-nav">
+                <a class="card-nav-back demo-link" href="https://juancarlucci.github.io/map/"target="_blank">live demo</a>
+                <a class="card-nav-back storyboard-link" href="#butter-map">storyboard</a>
+                <a class="card-nav-back code-link" href="https://github.com/juancarlucci/map"target="_blank">github code</a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="flex-item flip">
+            <div class="front">
+                <img src="images/map.jpg" alt="" />
+            </div>
+            <div class="back">
+                <h3>Some Text in the Back!</h3>
+            </div>
+          </div>
+
+        </div><!-- end card flex-container-->
+      <!-- </div> -->
     </section>
   </div>
   <!-- </section> -->
+  <section id="storyboards">
+
+    <article id="butter-map" class="storyboard butter-map-storyboard">
+      <section class="project-header">
+        <h1>Restaurant Map</h1>
+        <h2>skills:</h2>
+
+        <ul>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>Google Maps API</li>
+          <li>CSS</li>
+          <li>Leaflet.js</li>
+        </ul>
+
+      </section>
+
+    </article><!-- end butter-map-storyboard-->
+
+    <article class="storyboard energy-savings-storyboard">
+      <section class="project-header">
+        <h1>Energy Savings Map</h1>
+        <h2>skills:</h2>
+
+        <ul>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>Google Maps API</li>
+          <li>CSS</li>
+          <li>Leaflet.js</li>
+        </ul>
+
+      </section>
+
+    </article><!-- end energy-storyboard-->
+
+  </section>
+
 
 </div><!-- end wrapper-->
 
