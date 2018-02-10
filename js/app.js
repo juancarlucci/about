@@ -153,6 +153,29 @@ restaurantProjectStory.mouseover(function() {
   });
 });
 
+var createSkillsList = function(obj) {
+  var skills = obj.skills;
+  let skillsArray = [];
+  var li;
+
+  //from the object passed in by createStoryboard grab
+  //each skill. Create an li for each skill
+  for (elem of skills) {
+    console.log(elem);
+    li = `
+          <li>${elem}</li>
+        `;
+    skillsArray.push(li);
+  }
+
+  // skillsArray.join("");
+
+  // let skillsA = $('.skills-list');
+  // let skillsB = document.getElementById('skills-list');
+  $(".skills-list").html(skillsArray);
+
+  // console.log(skillsB, skillsA);
+};
 
 
 var createStoryboard = function(obj) {
@@ -172,7 +195,7 @@ var createStoryboard = function(obj) {
 
           <article class="project-skills item storyboardSkills">
               <h2>skills:</h2>
-              <ul class="nested skills-list">
+              <ul class="nested skills-list" id="skills-list">
               </ul>
             </article>
 
@@ -240,19 +263,31 @@ var createStoryboard = function(obj) {
     // }).join("");
 
     // console.log(storyBoardsArray);
-    var skills = obj.skills;
-    for(elem of skills) {
-      console.log(elem);
-      li = `
-        <li>${elem}</li>
-      `;
-  }
-
-
+//     var skills = obj.skills;
+//     let skillsArray = [];
+//     var li;
+//     for(elem of skills) {
+//       console.log(elem);
+//       li = `
+//         <li>${elem}</li>
+//       `;
+//       skillsArray.push(li);
+//
+//      }
+//      skillsArray.join("");
+//      let skillsA = $('.skills-list');
+//     let skillsB = document.getElementById('skills-list');
+//      $('.skills-list').html(skillsArray);
+//
+// console.log(skillsB);
 
   stortyboardsBoard.innerHTML = storyboard;
+
+  createSkillsList(obj)
 };//end of createStoryboard
 createStoryboard(restaurantMap);
+
+
 
 
 }); //end doc ready
