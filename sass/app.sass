@@ -39,7 +39,7 @@ header
 
   padding-bottom: 3%
   h1
-    font-size: 3.6em
+    font-size: 1.9em
     font-family: $fontMain
     color: black
     // background: linear-gradient( #30CFD0 0%, #330867 100%)
@@ -56,7 +56,7 @@ p
   font-family: $fontMain
   text-align: center
 
-nav
+#site-header nav
   grid-area: nav
   display: flex
   width: 50%
@@ -91,10 +91,15 @@ nav
   p
     flex-wrap: wrap
 
+#projects-title
+    padding: 3em
+    text-align: center
+
 .flex-container
   padding: 0
   margin: 0
   list-style: none
+  width: 44.688em
 
   display: -webkit-box
   display: -moz-box
@@ -187,3 +192,42 @@ footer
   width: 100%
   height: 100vh
   background-color: lightblue
+  display: grid
+  grid-gap: 0.5em
+
+.project-header
+  margin: 3em auto
+  width: 70%
+
+.storyboard-nav
+  float: left
+.project-skills
+  float: right
+
+.storyboard
+  height: 100vh
+
+svg
+  width: 200px
+// #butterMap
+//   height: 100vh
+//   background-color: green
+
+// .item
+//   background-color: yellow
+//   text-decoration: none
+//   border: 1px solid red
+
+.grid-container
+  display: grid
+  grid-gap: 20px
+  // grid-template-columns: repeat(5, 1fr)
+  grid-template-columns: repeat(7, auto)
+  margin: 3em auto
+  width: 70%
+  border: 1px solid red
+
+.item3
+  background: mistyrose
+  grid-column: span 3
+  grid-row: span 4
