@@ -69,7 +69,8 @@ var energySavings = {
 let projects = [restaurantMap, underscore, energySavings];
 
 let projectsBoard = document.getElementById("projects-board");
-let stortyboardsBoard = document.getElementById("storyboards");
+// let stortyboardsBoard = document.getElementById("storyboards");
+let stortyboardsBoard = document.getElementById("storyboard-container");
 // let fruitsCategory = document.getElementById("fruits");
 // let basicsCategory = document.getElementById("basics");
 
@@ -153,37 +154,59 @@ restaurantProjectStory.mouseover(function() {
 });
 
 
+
 var createStoryboard = function(obj) {
   let storyBoardsArray = [];
   var storyboard;
 
+
   for(prop in obj){
-    console.log(obj.projectId);
+    // console.log(obj.projectId);
     storyboard =  `
-      <article id="${obj.projectId}Storyboard" class="storyboard ${obj.projectId}-storyboard"> -->
-        <section class="project-header">
+      <article id="${obj.projectId}Storyboard" class="storyboard ${obj.projectId}-storyboard">
+      </article>
+          <section class="item storyboardTitle">
           <h1>${obj.title}</h1>
-            <nav class="storyboard-nav">
+          <h3>${obj.subTitle}</h3>
+          </section>
+
+          <article class="project-skills item storyboardSkills">
+              <h2>skills:</h2>
+              <ul class="nested skills-list">
+              </ul>
+            </article>
+
+
+
+            <nav class="storyboard-nav item storyboardNav nested">
               <a id="butterMap" class="card-nav-back demo-URL" href="https://juancarlucci.github.io/map/" target="_blank">live demo</a>
               <a class="card-nav-back storyboard-URL" href="#projects-title">back to projects</a>
               <a class="card-nav-back code-URL" href="https://github.com/juancarlucci/map" target="_blank">github code</a>
             </nav>
-            <article class="project-skills">
-              <h2>skills:</h2>
-              <ul>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>Google Maps API</li>
-                <li>CSS</li>
-                <li>Leaflet.js</li>
-              </ul>
-            </article>
-            <img src="images/map.jpg" alt="" class="item item9"/>
-          </section>
-        </article>
+
+
+              <img src="images/map.jpg" alt="" class="item storyboardMainImage"/>
+
+
+
+
+
     `;
     // storyBoardsArray.push(storyboard);
   }
+
+  // <article class="project-skills item storyboardSkills">
+  //     <h2>skills:</h2>
+  //     <ul class="nested">
+  //       <li>JavaScript</li>
+  //       <li>HTML</li>
+  //       <li>Google Maps API</li>
+  //       <li>CSS</li>
+  //       <li>Leaflet.js</li>
+  //     </ul>
+  //   </article>
+
+
   // let storyBoards = array.map((project) => {
 
   //   map over every item in array, map returns array
@@ -217,10 +240,19 @@ var createStoryboard = function(obj) {
     // }).join("");
 
     // console.log(storyBoardsArray);
+    var skills = obj.skills;
+    for(elem of skills) {
+      console.log(elem);
+      li = `
+        <li>${elem}</li>
+      `;
+  }
+
+
 
   stortyboardsBoard.innerHTML = storyboard;
 };//end of createStoryboard
-
+createStoryboard(restaurantMap);
 
 
 }); //end doc ready

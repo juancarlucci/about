@@ -142,33 +142,72 @@ footer {
   display: grid;
   grid-gap: 0.5em; }
 
-.project-header {
-  margin: 3em auto;
-  width: 70%; }
-
-.storyboard-nav {
-  float: left; }
-
-.project-skills {
-  float: right; }
-
 .storyboard {
   height: 100vh; }
-
-svg {
-  width: 200px; }
 
 .grid-container {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: [line1] 1fr [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [line6] 1fr [line7] 1fr [end];
+  grid-template-rows: [row1] 200px [row2] 60px [row3] 200px [row4] 200px [row5] 200px [row6] 200px [row7] 200px [end];
   margin: 3em auto;
-  width: 70%;
+  width: 100%;
   border: 1px solid red; }
 
-.item3 {
-  background: mistyrose;
-  grid-column: span 3;
-  grid-row: span 4; }
+.nested {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 48px;
+  grid-gap: 1em; }
+  .nested li,
+  .nested a {
+    border: #333 1px solid;
+    padding: 1em;
+    list-style: none; }
+
+.item {
+  border: 1px solid green;
+  background: mistyrose; }
+
+.storyboardTitle {
+  grid-column-start: line2;
+  grid-column-end: line4;
+  grid-row-start: row1; }
+  @media screen and (max-width: 27em) {
+    .storyboardTitle {
+      grid-column-start: line1;
+      grid-column-end: end; } }
+
+.storyboardSkills {
+  grid-column-start: line5;
+  grid-column-end: end;
+  grid-row-start: row1; }
+  @media screen and (max-width: 27em) {
+    .storyboardSkills {
+      grid-column-start: line1;
+      grid-column-end: end;
+      grid-row-start: row2; } }
+
+.storyboardNav {
+  grid-column-start: line2;
+  grid-column-end: line4;
+  grid-row-start: row2; }
+  @media screen and (max-width: 27em) {
+    .storyboardNav {
+      grid-column-start: line1;
+      grid-column-end: end;
+      grid-row-start: row3; } }
+
+.storyboardMainImage {
+  width: 100%;
+  grid-column-start: line3;
+  grid-column-end: line6;
+  grid-row-start: row4;
+  grid-row-end: row7; }
+  @media screen and (max-width: 27em) {
+    .storyboardMainImage {
+      grid-column-start: line1;
+      grid-column-end: end;
+      grid-row-start: row4; } }
 
 /*# sourceMappingURL=app.css.map */
