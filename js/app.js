@@ -15,6 +15,8 @@ $(document).ready(function(){
 //
 // });//emd click
 
+
+
 $(function(){
     $(".flip").flip({
         trigger: 'hover'
@@ -83,20 +85,7 @@ var energySavings = {
 let projects = [restaurantMap, underscore, energySavings];
 
 let projectsBoard = document.getElementById("projects-board");
-// let stortyboardsBoard = document.getElementById("storyboards");
 let stortyboardsBoard = document.getElementById("storyboard-container");
-// let fruitsCategory = document.getElementById("fruits");
-// let basicsCategory = document.getElementById("basics");
-
-// veggiesCategory.onclick = function() {
-//   createProject(veggies);
-// };
-// fruitsCategory.onclick = function() {
-//   createProject(fruits);
-// };
-// basicsCategory.onclick = function() {
-//   createProject(basics);
-// };
 
 var createProject = function(array) {
   let projectsArray = [];
@@ -111,7 +100,7 @@ var createProject = function(array) {
           <img src=${project.projectImage} alt="${project.title} image">
         </div>
         <div class="back">
-          <nav class="card-nav">
+          <nav id="project-nav" class="card-nav">
             <a class="card-nav-back demo-URL" href=${project.demoURL} target="_blank">live demo</a>
             <a id="createStoryboard${project.projectId}" href="#${project.projectId}Storyboard" data-projectName="#${project.projectId}" class="card-nav-back storyboard-URL">storyboard</a>
             <a class="card-nav-back code-URL" href=${project.codeURL} target="_blank">github code</a>
@@ -132,74 +121,6 @@ var createProject = function(array) {
 
 createProject(projects);
 
-// Add to storyboard  Button
-// document.addEventListener("click", function(e) {
-//   // $('')
-//   // e.preventDefault();
-//   if (e.target && e.target.id == "createStoryboard") {
-//
-//     let projectName = e.target.getAttribute("data-projectName");
-//     console.log(projectName);
-//     let projectId = e.target.getAttribute("id");
-//
-//     var projects = [restaurantMap, underscore, energySavings];
-//     let index = projects.indexOf(projectName);
-//
-//     projects.forEach(function(item){
-//       console.log(item.projectId);
-//       let name = item.projectId;
-//       if(name === projectName){
-//         console.log(projectName);
-//
-//         createStoryboard(projectName);
-//       }
-//     });
-//
-//   }
-// });
-
-// let restaurantProjectStory = $("#createStoryboardrestaurantMap");
-// console.log("restaurantProjectStory");
-// restaurantProjectStory.mouseover(function() {
-//   restaurantProjectStory.on("click", function() {
-//   console.log("restaurantProjectStory");
-//   createStoryboard(restaurantMap);
-//   });
-// });
-
-$("#createStoryboardrestaurantMap").on("click", function() {
-console.log("restaurantProjectStory");
-// href="#restaurantProjectStory
-createStoryboard(restaurantMap);
-});
-
-$("#createStoryboardunderscore").on("click", function() {
-console.log("restaurantProjectStory");
-createStoryboard(underscore);
-});
-
-$("#createStoryboardenergySavings").on("click", function() {
-console.log("restaurantProjectStory");
-createStoryboard(energySavings);
-});
-
-// let restaurantProjectStory = $("#createStoryboardrestaurantMap");
-// console.log("restaurantProjectStory");
-// restaurantProjectStory.mouseover(function() {
-//   restaurantProjectStory.on("click", function() {
-//   console.log("restaurantProjectStory");
-//   createStoryboard(restaurantMap);
-//   });
-// });
-// let restaurantProjectStory = $("#createStoryboardrestaurantMap");
-// console.log("restaurantProjectStory");
-// restaurantProjectStory.mouseover(function() {
-//   restaurantProjectStory.on("click", function() {
-//   console.log("restaurantProjectStory");
-//   createStoryboard(restaurantMap);
-//   });
-// });
-
 var createSkillsList = function(obj) {
   var skills = obj.skills;
   let skillsArray = [];
@@ -208,7 +129,7 @@ var createSkillsList = function(obj) {
   //from the object passed in by createStoryboard grab
   //each skill. Create an li for each skill
   for (elem of skills) {
-    console.log(elem);
+    // console.log(elem);
     li = `
           <li>${elem}</li>
         `;
@@ -226,7 +147,7 @@ var createStoryboard = function(obj) {
 
 
   for(prop in obj){
-    console.log(obj.feature1Image);
+    // console.log(obj.feature1Image);
     storyboard =  `
       <article id="${obj.projectId}Storyboard" class="storyboard ${obj.projectId}-storyboard">
       </article>
@@ -240,8 +161,6 @@ var createStoryboard = function(obj) {
               <ul class="nested skills-list" id="skills-list">
               </ul>
             </article>
-
-
 
             <nav class="storyboard-nav item storyboardNav nested vertically-centered">
               <a id="butterMap" class="card-nav-back demo-URL" href="https://juancarlucci.github.io/map/" target="_blank">live demo</a>
@@ -267,61 +186,8 @@ var createStoryboard = function(obj) {
 
 
     `;
-    // storyBoardsArray.push(storyboard);
+
   }
-
-
-
-  // let storyBoards = array.map((project) => {
-
-  //   map over every item in array, map returns array
-  // Wes Bos inspired: https://www.youtube.com/watch?v=YL1F4dCUlLc
-    // var storyboard =  `
-    //   <article id="${project.projectId}Storyboard" class="storyboard ${project.projectId}-storyboard"> -->
-    //     <section class="project-header">
-    //       <h1>${project.title}</h1>
-    //         <nav class="storyboard-nav">
-    //           <a id="butterMap" class="card-nav-back demo-URL" href="https://juancarlucci.github.io/map/" target="_blank">live demo</a>
-    //           <a class="card-nav-back storyboard-URL" href="#projects-title">back to projeccts</a>
-    //           <a class="card-nav-back code-URL" href="https://github.com/juancarlucci/map" target="_blank">github code</a>
-    //         </nav>
-    //   <div class="flex-item flip">
-    //     <div class="front">
-    //       <h2 class="itemName">${project.title}</h2>
-    //       <img src="${project.projectImage}" alt="${project.title} image">
-    //     </div>
-    //     <div class="back">
-    //       <nav class="card-nav">
-    //         <a class="card-nav-back demo-URL" href=${project.demoURL} target="_blank">live demo</a>
-    //         <a class="card-nav-back code-URL" href=${project.codeURL} target="_blank">github code</a>
-    //         </nav>
-    //       </div>
-    //     </div>
-    // `;
-    // storyBoardsArray.push(storyboard);
-    // return item;
-  //map returns array, but need string to feed HTML, so join
-  //join converts array to string
-    // }).join("");
-
-    // console.log(storyBoardsArray);
-//     var skills = obj.skills;
-//     let skillsArray = [];
-//     var li;
-//     for(elem of skills) {
-//       console.log(elem);
-//       li = `
-//         <li>${elem}</li>
-//       `;
-//       skillsArray.push(li);
-//
-//      }
-//      skillsArray.join("");
-//      let skillsA = $('.skills-list');
-//     let skillsB = document.getElementById('skills-list');
-//      $('.skills-list').html(skillsArray);
-//
-// console.log(skillsB);
 
   stortyboardsBoard.innerHTML = storyboard;
 
@@ -329,9 +195,70 @@ var createStoryboard = function(obj) {
 };//end of createStoryboard
 
 
-createStoryboard(restaurantMap);
+
+$("#createStoryboardrestaurantMap").on("click", function() {
 
 
+    createStoryboard(restaurantMap);
+    $('#storyboard-container').show().css( "width", "100%" );
+
+});
+
+$("#createStoryboardunderscore").on("click", function() {
+
+
+    createStoryboard(underscore);
+    $('#storyboard-container').show().css( "width", "100%" );
+
+});
+
+$("#createStoryboardenergySavings").on("click", function() {
+
+    createStoryboard(energySavings);
+    $('#storyboard-container').show().css( "width", "100%" );
+
+});
+
+$('#storyboard-container').on( "click", "a", function( event ) {
+
+    // $( "#storyboard-container" ).css( "width", "0" );
+    $( "#storyboard-container" ).hide("slow");
+    $('.grid-container').hide("slow");
+});
+
+//https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
+// Add smooth scrolling to all links
+  // $("a").on('click', function(event) {
+  //
+  //   // Make sure this.hash has a value before overriding default behavior
+  //   if (this.hash !== "") {
+  //     // Prevent default anchor click behavior
+  //     event.preventDefault();
+  //
+  //     // Store hash
+  //     var hash = this.hash;
+  //
+  //     // Using jQuery's animate() method to add smooth page scroll
+  //     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+  //     $('html, body').animate({
+  //       scrollTop: $(hash).offset().top
+  //     }, 800, function(){
+  //
+  //       // Add hash (#) to URL when done scrolling (default click behavior)
+  //       window.location.hash = hash;
+  //     });
+  //   } // End if
+  // });
+  // https://www.abeautifulsite.net/smoothly-scroll-to-an-element-without-a-jquery-plugin-2
+  $('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+});
 
 
 }); //end doc ready
