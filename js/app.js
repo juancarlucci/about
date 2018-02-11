@@ -262,10 +262,7 @@ $('#storyboard-container').on( "click", "a", function( event ) {
 
 
 //TESTIMONIALS
-function randomTestimonialFromArray(array){
-  return array[Math.floor(Math.random()* array.length)];
 
-}
 
 // let randomNumber = Math.floor(Math.random()* array.length);
 
@@ -280,7 +277,7 @@ const testimoniasArray = [
   },
   {
     author: "~Marcel Marceau, mime",
-    testimonial: "I can't say enough about Juan Carlos."
+    testimonial: "I can't say enough about Juan Carlos. I am speechless."
   },
   {
     author: "~Justin, GA",
@@ -304,37 +301,30 @@ const testimoniasArray = [
   },
   {
     author: "~Stephanie, GA",
-    testimonial: "He is a rock star. If he only knew how to code..."
+    testimonial: "He is a rock star! If he only knew how to code..."
   }
 
      ];
 
-// let randomTestimonial = randomTestimonialFromArray(testimoniasArray);
 
-
-
-// $("#testimonials-board").html(`
-// <p>${randomTestimonial.testimonial}</p>
-// <p>${randomTestimonial.author}</p>
-// `);
-// console.log(randomTestimonial.author,randomTestimonial.testimonial );
-$("#testimonials-board").html(function(){
-
-          let randomTestimonial = randomTestimonialFromArray(testimoniasArray);
-
-          let testimonial = `
-          <p>${randomTestimonial.testimonial}</p>
-          <p>${randomTestimonial.author}</p>
-          `;
-          return testimonial;
-        });
+function randomTestimonialFromArray(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
 
 function displayTestimonialCycle() {
-    setInterval(function(){
-       $("#arrow").fadeToggle(400);
-    }, 1000);
+  let randomTestimonial = randomTestimonialFromArray(testimoniasArray);
+  let testimonial = `
+    <p>${randomTestimonial.testimonial}</p>
+    <p>${randomTestimonial.author}</p>
+    `;
+  $("#testimonials-board").html(testimonial);
 }
-setTimeout(fader, 5000);
+
+displayTestimonialCycle();
+
+setInterval(function() {
+  displayTestimonialCycle();
+}, 3700);
 
 
 }); //end doc ready
