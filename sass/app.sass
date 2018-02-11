@@ -2,6 +2,12 @@
 $fontMain: "Montserrat",sans-serif
 $fontPara: "Open Sans",sans-serif
 
+//EXTENDS/INHERITANCE
+%title-shared
+  padding: 3em
+  text-align: center
+
+
 //queries
 $information-phone: "only screen and (max-width : 20.000em)"
 $break-small: 27em
@@ -25,6 +31,12 @@ html,
 body
   font-family: $fontMain
   width: 100%
+
+
+/////////////////////////////////////////
+//             HEADER
+/////////////////////////////////////////
+
 
 header
   grid-area: header
@@ -77,6 +89,11 @@ p
     &:hover
       border-color: #899ead
 
+
+
+/////////////////////////////////////////
+//             PROJECTS
+/////////////////////////////////////////
 #projects
   grid-area: projects
   // https://stackoverflow.com/questions/21409023/responsive-images-within-nested-flexboxes-are-spilling-outside-of-their-parents?rq=1
@@ -93,8 +110,7 @@ p
     flex-wrap: wrap
 
 #projects-title
-    padding: 3em
-    text-align: center
+    @extend %title-shared
 
 .flex-container
   padding: 0
@@ -143,10 +159,6 @@ p
   -ms-flex-wrap:  wrap
   flex-wrap:  wrap
 
-footer
-  grid-area: footer
-  background-color: #899ead
-  margin-top: 3em
 
 .flip
     height: 199px
@@ -198,27 +210,28 @@ footer
 .code-URL
   background-color: green
 
-
-#storyboards
-  // width: 100%
-  // height: 100vh
-  // background-color: lightblue
-  // display: grid
-  // grid-gap: 0.5em
-
-.project-header
-  // margin: 3em auto
-  // width: 70%
-
-.storyboard-nav
-  // float: left
-.project-skills
-  // float: right
-
-.storyboard
-  // height: 100vh
+/////////////////////////////////////////
+//             TESTIMONIALS
+/////////////////////////////////////////
+#testimonials-title
+    @extend %title-shared
 
 
+
+
+/////////////////////////////////////////
+//             FOOTER
+/////////////////////////////////////////
+
+
+footer
+  grid-area: footer
+  background-color: #899ead
+  margin-top: 3em
+
+/////////////////////////////////////////
+//             STORYBOARD
+/////////////////////////////////////////
 
 #storyboard-container
   // display: none

@@ -261,4 +261,80 @@ $('#storyboard-container').on( "click", "a", function( event ) {
 });
 
 
+//TESTIMONIALS
+function randomTestimonialFromArray(array){
+  return array[Math.floor(Math.random()* array.length)];
+
+}
+
+// let randomNumber = Math.floor(Math.random()* array.length);
+
+const testimoniasArray = [
+   {
+    author: "~Roland Berrill, co-founder of MENSA",
+    testimonial: "when I think of Juan Carlos my mind goes blank"
+  },
+  {
+    author: "~Eva, kindergarten teacher",
+    testimonial: "Compared to my current students, Juan Carlos is at least in the top 10 percent."
+  },
+  {
+    author: "~Marcel Marceau, mime",
+    testimonial: "I can't say enough about Juan Carlos."
+  },
+  {
+    author: "~Justin, GA",
+    testimonial: "Talking about clean code, he is a pro at it. So clean, he does not have a sigle line of code."
+  },
+  {
+    author:"~Tyson Wang, Abacus -Bringing you yesterdays technology, today",
+    testimonial: "Juan Carlos is an innovator. He can do more with a new Mac than most people can with a matchstick and bubble gum."
+  },
+  {
+    author: "~Federico, former boss",
+    testimonial: "He is independent, capable and thoughtful. For example, he can tie his own shoe laces."
+  },
+  {
+    author: "~Kay, GA",
+    testimonial: "Juan Carlos is a super efficient coder. What takes most student a week, he does in a month."
+  },
+  {
+    author: "~Christopher A. Wray, director of FBI",
+    testimonial: "We are looking for that touble maker. $500,000 reward for his whereabouts."
+  },
+  {
+    author: "~Stephanie, GA",
+    testimonial: "He is a rock star. If he only knew how to code..."
+  }
+
+     ];
+
+// let randomTestimonial = randomTestimonialFromArray(testimoniasArray);
+
+
+
+// $("#testimonials-board").html(`
+// <p>${randomTestimonial.testimonial}</p>
+// <p>${randomTestimonial.author}</p>
+// `);
+// console.log(randomTestimonial.author,randomTestimonial.testimonial );
+$("#testimonials-board").html(function(){
+
+          let randomTestimonial = randomTestimonialFromArray(testimoniasArray);
+
+          let testimonial = `
+          <p>${randomTestimonial.testimonial}</p>
+          <p>${randomTestimonial.author}</p>
+          `;
+          return testimonial;
+        });
+
+function displayTestimonialCycle() {
+    setInterval(function(){
+       $("#arrow").fadeToggle(400);
+    }, 1000);
+}
+setTimeout(fader, 5000);
+
+
 }); //end doc ready

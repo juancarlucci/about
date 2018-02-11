@@ -1,3 +1,7 @@
+#projects-title, #testimonials-title {
+  padding: 3em;
+  text-align: center; }
+
 * {
   box-sizing: border-box; }
 
@@ -63,10 +67,6 @@ p {
   #projects p {
     flex-wrap: wrap; }
 
-#projects-title {
-  padding: 3em;
-  text-align: center; }
-
 .flex-container {
   padding: 0;
   margin: 0;
@@ -92,11 +92,6 @@ p {
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
-
-footer {
-  grid-area: footer;
-  background-color: #899ead;
-  margin-top: 3em; }
 
 .flip {
   height: 199px;
@@ -141,6 +136,11 @@ footer {
 
 .code-URL {
   background-color: green; }
+
+footer {
+  grid-area: footer;
+  background-color: #899ead;
+  margin-top: 3em; }
 
 .sidenav .closebtn {
   position: absolute;
