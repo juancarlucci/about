@@ -39,21 +39,30 @@ var restaurantMap = {
   projectId: "restaurantMap",
   title: "Restaurant Map",
   subTitle: "Searchable map with nearby attractions",
-  skills: ["JavaScript", "Knockout.js", "HTML", "CSS", "Google Maps API", "Leaflet.js", "SweetAlert.js"],
+  skills: ["JavaScript", "Knockout.js", "HTML", "CSS", "Google Maps API", "Wikimedia API", "Leaflet.js", "SweetAlert.js"],
   projectImage: "images/map.jpg",
   images: [ "images/butterIcon.svg", "images/butterSpot2.svg", "noAPI.svg" ],
   demoURL: "https://juancarlucci.github.io/map/",
-  codeURL: "https://github.com/juancarlucci/map"
+  codeURL: "https://github.com/juancarlucci/map",
+  feature1: "searchable",
+  feature1Image:  "images/restaurantSearch.png",
+  feature2: "AJAX call to nearby attractions",
+  feature2Image:  "images/nearby.png"
+
 }
 var underscore = {
   projectId: "underscore",
   title: "Underscore.js Re-mixed",
   subTitle: "Re-wrote the first 10 functions",
-  skills: ["Deeper understanding of higher order functions (HOFs)","Execution context", "Closures", "Ability to solve problems"],
+  skills: ["Higher order functions","Execution context", "Closures", "Problem solving"],
   projectImage: "images/underscore.png",
   images: ["images/underscore.png" ],
   demoURL: "https://juancarlucci.github.io/map/",
-  codeURL: "https://github.com/juancarlucci/map"
+  codeURL: "https://github.com/juancarlucci/ssp7-underbar",
+  feature1: "_each function",
+  feature1Image: "images/_each.png",
+  feature2: "_filter function",
+  feature2Image: "images/_filter.png",
 }
 var energySavings = {
   projectId: "energySavings",
@@ -62,8 +71,13 @@ var energySavings = {
   skills: ["JavaScript","Leaflet.js", "Mapbox", "GeoJSON","D3.js"],
   projectImage: "images/code.png",
   images: [ "images/line_graph.png", "images/line_graph3.png", "noAPI.svg" ],
-  demoURL: "https://juancarlucci.github.io/map/",
-  codeURL: "https://github.com/juancarlucci/map"
+  demoURL: "https://juancarlucci.github.io/buildingEnergySavings/",
+  codeURL: "https://github.com/juancarlucci/buildingEnergySavings",
+  feature1: "d3.js graphics",
+  feature1Image: "images/line_graph.png",
+  feature2: "data-driven circle size",
+  feature2Image: "images/proportional.png"
+
 }
 
 let projects = [restaurantMap, underscore, energySavings];
@@ -99,7 +113,7 @@ var createProject = function(array) {
         <div class="back">
           <nav class="card-nav">
             <a class="card-nav-back demo-URL" href=${project.demoURL} target="_blank">live demo</a>
-            <a id="createStoryboard${project.projectId}" href="#${project.projectId}" data-projectName="#${project.projectId}" class="card-nav-back storyboard-URL">storyboard</a>
+            <a id="createStoryboard${project.projectId}" href="#${project.projectId}Storyboard" data-projectName="#${project.projectId}" class="card-nav-back storyboard-URL">storyboard</a>
             <a class="card-nav-back code-URL" href=${project.codeURL} target="_blank">github code</a>
             </nav>
           </div>
@@ -144,14 +158,47 @@ createProject(projects);
 //   }
 // });
 
-let restaurantProjectStory = $("#createStoryboardrestaurantMap");
+// let restaurantProjectStory = $("#createStoryboardrestaurantMap");
+// console.log("restaurantProjectStory");
+// restaurantProjectStory.mouseover(function() {
+//   restaurantProjectStory.on("click", function() {
+//   console.log("restaurantProjectStory");
+//   createStoryboard(restaurantMap);
+//   });
+// });
+
+$("#createStoryboardrestaurantMap").on("click", function() {
 console.log("restaurantProjectStory");
-restaurantProjectStory.mouseover(function() {
-  restaurantProjectStory.on("click", function() {
-  console.log("restaurantProjectStory");
-  createStoryboard(restaurantMap);
-  });
+// href="#restaurantProjectStory
+createStoryboard(restaurantMap);
 });
+
+$("#createStoryboardunderscore").on("click", function() {
+console.log("restaurantProjectStory");
+createStoryboard(underscore);
+});
+
+$("#createStoryboardenergySavings").on("click", function() {
+console.log("restaurantProjectStory");
+createStoryboard(energySavings);
+});
+
+// let restaurantProjectStory = $("#createStoryboardrestaurantMap");
+// console.log("restaurantProjectStory");
+// restaurantProjectStory.mouseover(function() {
+//   restaurantProjectStory.on("click", function() {
+//   console.log("restaurantProjectStory");
+//   createStoryboard(restaurantMap);
+//   });
+// });
+// let restaurantProjectStory = $("#createStoryboardrestaurantMap");
+// console.log("restaurantProjectStory");
+// restaurantProjectStory.mouseover(function() {
+//   restaurantProjectStory.on("click", function() {
+//   console.log("restaurantProjectStory");
+//   createStoryboard(restaurantMap);
+//   });
+// });
 
 var createSkillsList = function(obj) {
   var skills = obj.skills;
@@ -168,13 +215,8 @@ var createSkillsList = function(obj) {
     skillsArray.push(li);
   }
 
-  // skillsArray.join("");
-
-  // let skillsA = $('.skills-list');
-  // let skillsB = document.getElementById('skills-list');
+  //grab the skills-list container and drop in skillsArray
   $(".skills-list").html(skillsArray);
-
-  // console.log(skillsB, skillsA);
 };
 
 
@@ -184,7 +226,7 @@ var createStoryboard = function(obj) {
 
 
   for(prop in obj){
-    // console.log(obj.projectId);
+    console.log(obj.feature1Image);
     storyboard =  `
       <article id="${obj.projectId}Storyboard" class="storyboard ${obj.projectId}-storyboard">
       </article>
@@ -201,16 +243,26 @@ var createStoryboard = function(obj) {
 
 
 
-            <nav class="storyboard-nav item storyboardNav nested">
+            <nav class="storyboard-nav item storyboardNav nested vertically-centered">
               <a id="butterMap" class="card-nav-back demo-URL" href="https://juancarlucci.github.io/map/" target="_blank">live demo</a>
               <a class="card-nav-back storyboard-URL" href="#projects-title">back to projects</a>
               <a class="card-nav-back code-URL" href="https://github.com/juancarlucci/map" target="_blank">github code</a>
             </nav>
 
 
-              <img src="images/map.jpg" alt="" class="item storyboardMainImage"/>
+            <a class="storyboardMainImage" href=${obj.demoURL} target="_blank">
+              <img class="item" src=${obj.projectImage} alt="${obj.title} image"/>
+              </a>
 
+              <article class="features1 item">
+                <p class="feature1  vertically-centered">${obj.feature1}</p>
+                <img class="feature1Image" src=${obj.feature1Image} alt="${obj.feature1Image} image"/>
+              </article>
 
+              <article class="features2 item">
+                <p class="feature2 vertically-centered">${obj.feature2}</p>
+                <img class="feature2Image " src=${obj.feature2Image} alt="${obj.feature2Image} image"/>
+              </article>
 
 
 
@@ -218,16 +270,6 @@ var createStoryboard = function(obj) {
     // storyBoardsArray.push(storyboard);
   }
 
-  // <article class="project-skills item storyboardSkills">
-  //     <h2>skills:</h2>
-  //     <ul class="nested">
-  //       <li>JavaScript</li>
-  //       <li>HTML</li>
-  //       <li>Google Maps API</li>
-  //       <li>CSS</li>
-  //       <li>Leaflet.js</li>
-  //     </ul>
-  //   </article>
 
 
   // let storyBoards = array.map((project) => {
@@ -285,6 +327,8 @@ var createStoryboard = function(obj) {
 
   createSkillsList(obj)
 };//end of createStoryboard
+
+
 createStoryboard(restaurantMap);
 
 

@@ -1,6 +1,6 @@
 // variables
-$fontMain: "Fredericka_the_Great",Arial,sans-serif
-$fontPara: "Lato"
+$fontMain: "Montserrat",sans-serif
+$fontPara: "Open Sans",sans-serif
 
 //queries
 $information-phone: "only screen and (max-width : 20.000em)"
@@ -41,6 +41,7 @@ header
   h1
     font-size: 1.9em
     font-family: $fontMain
+    text-transform: uppercase
     color: black
     // background: linear-gradient( #30CFD0 0%, #330867 100%)
     // background: linear-gradient( #EDEDED 0%, #330867 100%)
@@ -49,11 +50,11 @@ header
   h1,
   h2,
   a
-    font-family: $fontMain
+    font-family: $fontPara
     text-align: center
     // color: #fff
 p
-  font-family: $fontMain
+  font-family: $fontPara
   text-align: center
 
 #site-header nav
@@ -65,7 +66,7 @@ p
   padding: 2em 0em
   padding-bottom: 11em
   a
-    font-family: $fontMain, sans-serif
+    font-family: $fontPara, sans-serif
     font-weight: 600
     text-decoration: none
     color: #899ead
@@ -157,43 +158,53 @@ footer
     height: auto
 
 .flip .back
+    height: 90%
     background: #2184cd
     color: #fff
     text-align: center
 
 .back nav
   position: relative
-  top: 0px
+  top: 25%
   left: 0px
   flex-direction: column
   position: relative
-  top: -19px
-  left: -50px
-  justify-content: space-around
-  // text-align: center
+  text-align: center
   a
     display: block
-    width: 200px
+    width: 80%
+    margin: 20px auto
+
+    font-family: $fontPara, sans-serif
+    font-weight: 600
+    text-decoration: none
+    color: #899ead
+    letter-spacing: 0.063em
+    font-size: 1.125em
+
+    border-bottom: 0.125em solid transparent
+    &:hover
+      border-color: #899ead
 
 
 
-.demo-link
+.demo-URL
   background-color: orangered
-  margin: auto
 
-.storyboard-link
+
+.storyboard-URL
   background-color: blue
-  margin: auto
-.code-link
+
+.code-URL
   background-color: green
-  margin: auto
+
 
 #storyboards
-  width: 100%
-  height: 100vh
-  background-color: lightblue
-  display: grid
-  grid-gap: 0.5em
+  // width: 100%
+  // height: 100vh
+  // background-color: lightblue
+  // display: grid
+  // grid-gap: 0.5em
 
 .project-header
   // margin: 3em auto
@@ -205,7 +216,7 @@ footer
   // float: right
 
 .storyboard
-  height: 100vh
+  // height: 100vh
 
 // svg
 //   width: 200px
@@ -218,68 +229,130 @@ footer
 //   text-decoration: none
 //   border: 1px solid red
 
+#storyboard-container
+  // display: none
+
 .grid-container
   display: grid
   grid-gap: 20px
   // grid-template-columns: repeat(5, 1fr)
   // grid-template-columns: repeat(7, 1fr)
   // grid-template-rows: 100px
-  grid-template-columns: [line1] 1fr [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [line6] 1fr [line7] 1fr [end]
-  grid-template-rows: [row1] 200px [row2] 60px [row3] 200px [row4] 200px [row5] 200px [row6] 200px [row7] 200px [end]
+  grid-template-columns: [line1] 1fr [line2] 1fr [line3] 1fr [line4] 1fr [line5] 1fr [line6] 1fr [line7] 1fr [line8] 1fr [line9] 1fr [line10] 1fr [line11] 1fr [line12] 1fr [end]
+  grid-template-rows: [row1] 150px [row2] 60px [row3] 150px [row4] 150px [row5] 150px [row6] 150px [row7] 150px [row8] 150px [row9] 150px [row10] 150px [end]
 
   margin: 3em auto
+  padding: 0 3em
   width: 100%
-  border: 1px solid red
+  max-width: 1288px
+  // border: 1px solid red
 
 .nested
   display: grid
   grid-template-columns: repeat(3, 1fr)
   grid-auto-rows: 48px
-  grid-gap: 1em
-  li,
-  a
+  grid-gap: 0.5em
+  text-align: center
+  font-family: $fontPara
+  margin: auto
+  padding: 0px
+  @media screen and (max-width: $break-small)
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+  li
     border: #333 1px solid
     padding: 1em
     list-style: none
+  a
+    font-weight: 600
+    text-decoration: none
+    color: #899ead
+    letter-spacing: 0.063em
+    font-size: 1.125em
+    margin: 0 1.250em
+    border-bottom: 0.125em solid transparent
+    &:hover
+      border-color: #899ead
 
+.skills-list
+  @media screen and (max-width: $break-small)
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
 
 .item
-  border: 1px solid green
-  background: mistyrose
+  // border: 1px solid green
+  // background: mistyrose
+  h1
+    font-family: $fontMain
+    text-transform: uppercase
+
+
 
 .storyboardTitle
-  grid-column-start: line2
-  grid-column-end: line4
+  grid-column-start: line1
+  grid-column-end: line6
   grid-row-start: row1
   @media screen and (max-width: $break-small)
     grid-column-start: line1
     grid-column-end: end
 
 .storyboardSkills
-  grid-column-start: line5
+  grid-column-start: line7
   grid-column-end: end
   grid-row-start: row1
+  grid-row-end: row3
   @media screen and (max-width: $break-small)
     grid-column-start: line1
     grid-column-end: end
-    grid-row-start: row2
+    grid-row-start: row6
+    grid-row-end: row9
 
 .storyboardNav
-  grid-column-start: line2
-  grid-column-end: line4
+  grid-column-start: line1
+  grid-column-end: line6
   grid-row-start: row2
   @media screen and (max-width: $break-small)
     grid-column-start: line1
-    grid-column-end: end
-    grid-row-start: row3
+    grid-column-end: line12
+    grid-row-start: row5
 
-.storyboardMainImage
+.storyboardMainImage,
+.storyboardMainImage img
   width: 100%
-  grid-column-start: line3
-  grid-column-end: line6
+  grid-column-start: line5
+  grid-column-end: line9
   grid-row-start: row4
   grid-row-end: row7
   @media screen and (max-width: $break-small)
     grid-column-start: line1
     grid-column-end: end
-    grid-row-start: row4
+    grid-row-start: row3
+    grid-row-end: row6
+
+.features1
+  grid-column-start: line2
+  grid-column-end: line4
+  grid-row-start: row4
+  grid-row-end: row5
+
+.feature1Image
+  width: 100%
+  // grid-column-start: line2
+  // grid-column-end: line4
+  // grid-row-start: row5
+  // grid-row-end: row6
+
+.features2
+  grid-column-start: line2
+  grid-column-end: line4
+  grid-row-start: row5
+  grid-row-end: row6
+
+.feature2Image
+  width: 100%
+  // grid-column-start: line2
+  // grid-column-end: line4
+  // grid-row-start: row7
+  // grid-row-end: row8
