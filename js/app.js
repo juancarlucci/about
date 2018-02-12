@@ -87,6 +87,12 @@ let projects = [restaurantMap, underscore, energySavings];
 let projectsBoard = document.getElementById("projects-board");
 let stortyboardsBoard = document.getElementById("storyboard-container");
 
+
+/////////////////////////////////////////////////////
+//////////// PROJECTS /////////////////////////////
+////////////////////////////////////////////////////
+
+
 var createProject = function(array) {
   let projectsArray = [];
 
@@ -140,6 +146,9 @@ var createSkillsList = function(obj) {
   $(".skills-list").html(skillsArray);
 };
 
+/////////////////////////////////////////////////////
+//////////// STORYBOARD /////////////////////////////
+////////////////////////////////////////////////////
 
 var createStoryboard = function(obj) {
   let storyBoardsArray = [];
@@ -260,16 +269,18 @@ $('#storyboard-container').on( "click", "a", function( event ) {
     }
 });
 
+/////////////////////////////////////////////////////
+////////////TESTIMONIALS /////////////////////////////
+////////////////////////////////////////////////////
 
-//TESTIMONIALS
 
 
-// let randomNumber = Math.floor(Math.random()* array.length);
+//https://medium.freecodecamp.org/creating-a-bare-bones-quote-generator-with-javascript-and-html-for-absolute-beginners-5264e1725f08
 
 const testimoniasArray = [
    {
     author: "~Roland Berrill, co-founder of MENSA",
-    testimonial: "when I think of Juan Carlos my mind goes blank"
+    testimonial: "When I think of Juan Carlos my mind goes blank."
   },
   {
     author: "~Eva, kindergarten teacher",
@@ -284,7 +295,7 @@ const testimoniasArray = [
     testimonial: "Talking about clean code, he is a pro at it. So clean, he does not have a sigle line of code."
   },
   {
-    author:"~Tyson Wang, Abacus -Bringing you yesterdays technology, today",
+    author:"~Tyson Wang, Abacus -Bringing you yesterday's technology, today",
     testimonial: "Juan Carlos is an innovator. He can do more with a new Mac than most people can with a matchstick and bubble gum."
   },
   {
@@ -303,8 +314,7 @@ const testimoniasArray = [
     author: "~Stephanie, GA",
     testimonial: "He is a rock star! If he only knew how to code..."
   }
-
-     ];
+];
 
 
 function randomTestimonialFromArray(array) {
@@ -326,5 +336,282 @@ setInterval(function() {
   displayTestimonialCycle();
 }, 3700);
 
+/////////////////////////////////////////////////////
+////////////STICKY nav /////////////////////////////
+////////////////////////////////////////////////////
+let pageNavElement = $("#page-nav");
+let siteHeaderElement = $("#site-header nav");
+
+//https://codepen.io/_codemics/pen/PwEbYJ
+// https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
+
+// grab the initial top offset of the navigation
+var stickyNavTop = pageNavElement.offset().top;
+
+// our function that decides weather the navigation bar should have "fixed" css position or not.
+var stickyNav = function() {
+  // current vertical position from the top
+  var scrollTop = $(window).scrollTop();
+
+  // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+  // otherwise change it back to relative
+  if (scrollTop > stickyNavTop) {
+    pageNavElement.addClass("sticky", 800);
+    siteHeaderElement.css( "width", "100%" );
+    siteHeaderElement.css( "padding-bottom", "4em" );
+  } else {
+    pageNavElement.removeClass("sticky");
+  }
+};
+
+stickyNav();
+// run it again every scroll
+$(window).scroll(function() {
+  stickyNav();
+});
+
+
+
+// highlight nav
+function currentLinkHighlight () {
+
+// Add active class to the current nav link (highlight it)
+  let nav = document.getElementById("page-nav");
+  var links = nav.getElementsByTagName("a");
+
+  for (let i = 0; i < links.length; i++) {
+    var selectedCategory = [];
+    links[i].addEventListener("click", function(e) {
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace("active", "");
+      this.className += " active";
+      ///******************************************
+      //?? Can we not push out of an EventListner??
+      // https://stackoverflow.com/questions/5309926/how-to-get-the-data-id-attribute
+      // https://www.w3schools.com/howto/howto_js_active_element.asp
+      let text = e.target.getAttribute("data-id");
+      console.log(text);
+    });
+
+  }
+}
+currentLinkHighlight ();
+
+
+
+//
+// $("#page-nav").on('click','.nav', function ( e ) {
+//         e.preventDefault();
+//         $(this).parents("#page-nav").find('.active').removeClass('active').end().end().addClass('active');
+//         $(activeTab).show();
+//     });
+// var $sections = $('.container');
+//
+//   // The user scrolls
+//   $(window).scroll(function(){
+//
+//     // currentScroll is the number of pixels the window has been scrolled
+//     var currentScroll = $(this).scrollTop();
+//
+//     // $currentSection is somewhere to place the section we must be looking at
+//     var $currentSection;
+//
+//     // We check the position of each of the divs compared to the windows scroll positon
+//     $sections.each(function(){
+//       // divPosition is the position down the page in px of the current section we are testing
+//       var divPosition = $(this).offset().top;
+//
+//       // If the divPosition is less the the currentScroll position the div we are testing has moved above the window edge.
+//       // the -1 is so that it includes the div 1px before the div leave the top of the window.
+//       if( divPosition - 1 < currentScroll ){
+//         // We have either read the section or are currently reading the section so we'll call it our current section
+//         $currentSection = $(this);
+//         // $currentSection.addClass('active')
+//         // If the next div has also been read or we are currently reading it we will overwrite this value again. This will leave us with the LAST div that passed.
+//       }
+//
+//       // This is the bit of code that uses the currentSection as its source of ID
+//       var id = $currentSection.attr('id');
+//       let href = $currentSection.attr('href');
+//       console.log(id, href);
+//    	 $('a').removeClass('active');
+//      $(`[href="#+id+"]`).addClass('active');
+//    	 // $("[href=#"+id+"]").addClass('active');
+//
+//     })
+//
+//   });
+//
+// $('#page-nav a').on('click', function(event) {
+//     $(this).parent().find('a').removeClass('active');
+//     $(this).addClass('active');
+// });
+//
+// $(window).on('scroll', function() {
+//     $('.target').each(function() {
+//         if($(window).scrollTop() >= $(this).offset().top) {
+//             var id = $(this).attr('id');
+//             $('#page-nav a').removeClass('active');
+//             $('#page-nav a[href="' + id + '"]').addClass('active');
+//             // $('#page-nav a[href="' + id + '"]').addClass('active');
+//         }
+//     });
+// });
+
+
+
+// //http://www.instantshift.com/2014/11/14/jquery-page-scroll-active-menu/
+// $(window).scroll(function(){
+//         var window_top = $(window).scrollTop() + 12;
+// 		// the "12" should equal the margin-top value for nav.active
+//         var div_top = $('#home').offset().top;
+// 		if (window_top >= div_top) {
+//                 $('page-nav').addClass('sticky');
+//             } else {
+//                 $('page-nav').removeClass('sticky');
+//             }
+//     });
+//
+//
+//   $(document).on("scroll", onScroll);
+//
+//
+//     $('a[href^="#"]').on('click', function (e) {
+//     	e.preventDefault();
+//         $(document).off("scroll");
+//
+//         $('a').each(function () {
+//             $(this).removeClass('active');
+//         })
+//         $(this).addClass('active');
+//
+//         var target = this.hash,
+//             menu = target;
+// 		$target = $(target);
+//        $('html, body').stop().animate({
+//             'scrollTop': $target.offset().top+2
+//         }, 600, 'swing', function () {
+//             window.location.hash = target;
+//             $(document).on("scroll", onScroll);
+//         });
+//     });
+//
+//
+// function onScroll(event){
+//     var scrollPos = $(document).scrollTop();
+//
+// 	$('#page-nav a').each(function () {
+//         var currLink = $(this);
+// 		var refElement = $(currLink.attr("href"));
+//         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+//             $('#page-nav ul li a').removeClass("active");
+//             currLink.addClass("active");
+//         } else {
+//             currLink.removeClass("active");
+//         }
+//     });
+// }
+//
+// $('#page-nav a').on('click', function(event) {
+//     $(this).parent().find('a').removeClass('active');
+//     $(this).addClass('active');
+// });
+//
+// $(window).on('scroll', function() {
+//     $('.target').each(function() {
+//         if($(window).scrollTop() >= $(this).offset().top) {
+//             var id = $(this).attr('id');
+//             $('#page-nav a').removeClass('active');
+//             $('#page-nav a[href="' + id + '"]').addClass('active');
+//
+//         }
+//     });
+// });
+
+
+
+
+// // Cache selectors
+// var lastId,
+//  topMenu = $("#page-nav"),
+//  topMenuHeight = topMenu.outerHeight()+1,
+//  // All list items
+//  menuItems = topMenu.find("a"),
+//  // Anchors corresponding to menu items
+//  scrollItems = menuItems.map(function(){
+//    var item = $($(this).attr("href"));
+//     if (item.length) { return item; }
+//  });
+//
+// // Bind click handler to menu items
+// // so we can get a fancy scroll animation
+// menuItems.click(function(e){
+//   var href = $(this).attr("href"),
+//       offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+//   $('html, body').stop().animate({
+//       scrollTop: offsetTop
+//   }, 850);
+//   e.preventDefault();
+// });
+//
+// // Bind to scroll
+// $(window).scroll(function(){
+//    // Get container scroll position
+//    var fromTop = $(this).scrollTop()+topMenuHeight;
+//
+//    // Get id of current scroll item
+//    var cur = scrollItems.map(function(){
+//      if ($(this).offset().top < fromTop)
+//        return this;
+//    });
+//    // Get the id of the current element
+//    cur = cur[cur.length-1];
+//    var id = cur && cur.length ? cur[0].id : "";
+//
+//    if (lastId !== id) {
+//        lastId = id;
+//        // Set/remove active class
+//        menuItems
+//          .parent().removeClass("active")
+//          .end().filter('a[href="' + id + '"]').parent().addClass("active");
+//
+//    }
+// });
+
+
+//
+// $('#page-nav a').on('click', function() {
+//
+//     var scrollAnchor = $(this).attr('data-scroll'),
+//         scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+//
+//     $('body,html').animate({
+//         scrollTop: scrollPoint
+//     }, 500);
+//
+//     return false;
+//
+// })
+//
+//
+// $(window).scroll(function() {
+//     var windscroll = $(window).scrollTop();
+//     if (windscroll >= 100) {
+//         $('#page-nav').addClass('fixed');
+//         $('.wrapper section').each(function(i) {
+//             if ($(this).position().top <= windscroll - 20) {
+//                 $('#page-nav a.active').removeClass('active');
+//                 $('#page-nav a').eq(i).addClass('active');
+//             }
+//         });
+//
+//     } else {
+//
+//         $('#page-nav').removeClass('fixed');
+//         $('#page-nav a.active').removeClass('active');
+//         $('#page-nav a:first').addClass('active');
+//     }
+//
+// }).scroll();
 
 }); //end doc ready

@@ -26,41 +26,67 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery.flip.min.js"></script>
-  <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+  <!-- <script src="http://malsup.github.com/jquery.cycle2.js"></script> -->
   <script src="js/app.js"></script>
 
 </head>
 
 <body>
-  <div class="wrapper docScroller">
+  <div id="home" class="wrapper docScroller target">
    <div class="page">
+     <a class="hamburger hide" href=""><i class="fa fa-bars"></i></a>
      <header class="vertically-centered inside" id="site-header">
         <!-- //without this div, h1, p and nav behave as inline -->
-        <div class="home">
-          <h1 id="title">JUAN CARLOS COLLINS</h1>
-          <h2>web development | data visualization</h2>
-          <nav>
-            <a href="#projects-title">projects</a>
-            <a href="#">about</a>
-            <a href="#testimonials-title">testimonials</a>
-            <a href="#">contact</a>
+        <div class="home widget">
+          <nav id="page-nav" class="nav">
+            <a href="#home" data-scroll="home" class="active">home</a>
+            <a href="#projects-title" data-scroll="projects">projects</a>
+            <a href="#about" data-scroll="about">about</a>
+            <a href="#testimonials-title" data-scroll="testimonials">testimonials</a>
+            <a href="#footer" data-scroll="footer">contact</a>
           </nav>
-       </div>
+          <div class="blur"></div>
+            <div class="title">
+              <h1 id="title">JUAN CARLOS COLLINS</h1>
+              <h2>web development | data visualization</h2>
+            </div>
+          </div>
+
+
      </header>
    </div>
+
+
+
+   <!-- <div class="nav">
+		<span id ="menu">&</span>
+		<ul id="top-menu">
+      <li><a href="#home" class="links">Home</a></li>
+			<li><a href="#projects-title" class="links">projects</a></li>
+			<li><a href="#testimonials-title" class="links">testimonials</a></li>
+			<li><a href="#four" class="links">about</a></li>
+			<li><a href="#footer" class="links">contact</a></li>
+			<li><a href="#six" class="links">6</a></li>
+		</ul>
+	</div> -->
    <!-- end page -->
 
-    <div id="projects-title">
+    <div class="projects-wrapper">
+    <div id="projects-title" class="container target" data-anchor="projects">
     <h2>Projects</h2>
     </div>
+    </div>
 
-    <section id="projects" class="gallery page">
+    <section id="projects" class="page">
+
+      <!-- <div class="blur"></div> -->
       <!-- <div id="storyboard-container" class="grid-container"></div> -->
-      <div id="projects-board" class="flex-container container inside">
+      <div id="projects-board" class="flex-container inside">
       </div><!-- end card flex-container-->
     </section>
 
-    <div id="testimonials-title">
+    <div class="testimonials-wrapper">
+    <div id="testimonials-title" class="container target" data-anchor="testimonials">
     <h2>testimonials</h2>
     </div>
 
@@ -69,22 +95,44 @@
       <div id="testimonials-board" class="inside">
       </div><!-- end testimonials-board-->
     </section>
+  </div><!-- end testimonials-wrapper-->
 
 </div><!-- end wrapper-->
 
-    <footer class="page">
+<section id="about" class="target" data-anchor="about">
+  <div id="storyboard-container" class="grid-container"></div>
+</section>
+
+
+    <footer id="footer" class="page container target" data-anchor="footer">
+
+      <form class="wrap">
+        <h2>Get in touch</h2>
+        <input class="input name" id="user_name" placeholder="NAME" type="text">
+        <span  id="user_name_message" aria-live="polite"></span>
+        <input class="input email" id="user_email" placeholder="EMAIL" type="email">
+        <span  id="user_email_message" aria-live="polite"></span>
+        <input class="input comment" id="user_comment" placeholder="MESSAGE" type="text">
+        <input class="input submit" type="submit" value="SUBMIT">
+        <span  id="user_submit_message" aria-live="polite"></span>
+      </form>
+
+
       <div class="inside">
        <input class="input name" id="user_email2" placeholder="email address" type="text">
        <input class="input submit" type="submit" value="Keep In Touch">
         <section class="lineCopyRight">
           <p class="copyright">&#169; 2018 Juan Carlos Collins</p>
-        </section>
+
+      </section>
       </div>
     </footer>
 
     <section>
       <div id="storyboard-container" class="grid-container"></div>
     </section>
+
+
 
 </body>
 
