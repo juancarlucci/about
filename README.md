@@ -14,6 +14,8 @@ Whiteboard basic concept
 
 Create wireframe using Figma
 
+![image of wireframe](images/wireframes.png "wireframe")
+
 Create Client side including Portfolio, About, and Contact sections
 
 Optimize images and files (compression, minification, etc.)
