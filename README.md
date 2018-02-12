@@ -24,3 +24,25 @@ Optimize images and files (compression, minification, etc.)
 
 
 ## Biggest wins and challenges:
+
+Biggest win:  Mapping over array of objects to extract information and add elements to the DOM
+
+Biggest challenge: 
+
+Difficult time integrating change of class on scroll.
+
+
+## Code Snippets
+
+Object Literals
+
+![image of code, Object Literals](images/objectLiteral.png "Object Literals")
+
+Map over array of objects to create DOM 
+
+![image of code, mapping over arrays](images/createDOMmap.png "Map over array of objects to create DOM")
+
+Its all about timing
+
+![image of code, set interval](images/setInterval.png "Change testimonials on a timer")
+
