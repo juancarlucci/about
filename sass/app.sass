@@ -43,7 +43,8 @@ html,
 body
   font-family: $fontMain
   width: 100%
-  @include linearGradient(#fff, #859398)
+  @include linearGradient(#fff, #d4d4d4)
+  // color: #d6d8d9
 
 
 /////////////////////////////////////////
@@ -98,6 +99,7 @@ body
 
 
 
+
 .blur
   background-size: cover
   overflow: hidden
@@ -108,6 +110,8 @@ body
   left: -50px
   right: -50px
   bottom: -50px
+  //allows clicking layer below
+  pointer-events: none
 
 .title
   position: relative
@@ -148,7 +152,8 @@ p
   justify-content: space-around
   margin: auto
   padding: 2em 0em
-  padding-top: 12em
+  pointer-events: auto
+  // padding-top: 12em
   // @include linearGradient(#859398, #757575)
   @media screen and (max-width: $break-small)
     display: inline-block
@@ -172,6 +177,7 @@ p
   // width: 90%
   margin: auto
   color: #47545D
+  // pointer-events: none
   @include linearGradient(#abbaab, #fff)
 
 .hamburger
@@ -234,10 +240,11 @@ p
 /////////////////////////////////////////
 //             PROJECTS
 /////////////////////////////////////////
-.projects-wrapper
-  -webkit-filter: blur(3px)
-  filter: blur(3px)
 
+
+.projects-wrapper
+  height: 100vh
+  @include linearGradient(#fff, #d4d4d4)
 
 
 
@@ -246,11 +253,14 @@ p
   // https://stackoverflow.com/questions/21409023/responsive-images-within-nested-flexboxes-are-spilling-outside-of-their-parents?rq=1
   height: auto
   min-height: 27em
-  @include linearGradient(#757575, #abbaab)
+  // @include linearGradient(#757575, #abbaab)
+
   // overflow-y: auto
   max-width: 55em
   margin: auto
   display: flex
+  border-top: 2px solid rgba(255, 255, 255, .5)
+  border-bottom: 2px solid rgba(255, 255, 255, .5)
   @media screen and (max-width: $break-small)
   p
     flex-wrap: wrap
@@ -361,8 +371,9 @@ p
 //             TESTIMONIALS
 /////////////////////////////////////////
 .testimonials-wrapper
-  height: 52em
-  padding: 16em
+  height: 100vh
+  @include linearGradient(#d4d4d4, #fff)
+  // padding: 16em 0
 
 #testimonials-title
     @extend %title-shared
@@ -370,12 +381,17 @@ p
 
 #testimonials
   color: #fff
-  width: 22em
+  width: 55em
+  height: 15.5em
   margin: auto
   margin-bottom: 3em
   line-height: 1.5em
   padding: 1.5em
   @include linearGradient(#abbaab, #757575)
+
+#testimonials-board
+  width: 50%
+  margin: auto
 
 
 /////////////////////////////////////////

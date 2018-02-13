@@ -351,7 +351,7 @@ var stickyNavTop = pageNavElement.offset().top;
 // our function that decides weather the navigation bar should have "fixed" css position or not.
 var stickyNav = function() {
   // current vertical position from the top
-  var scrollTop = $(window).scrollTop();
+  var scrollTop = $(window).scrollTop()-175;
 
   // if we've scrolled more than the navigation, change its position to fixed to stick to top,
   // otherwise change it back to relative

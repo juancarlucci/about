@@ -10,12 +10,12 @@ body {
   font-family: "Montserrat", sans-serif;
   width: 100%;
   background: #fff;
-  background: -moz-linear-gradient(top, #fff 0%, #859398 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #859398));
-  background: -webkit-linear-gradient(top, #fff 0%, #859398 100%);
-  background: -o-linear-gradient(top, #fff 0%, #859398 100%);
-  background: -ms-linear-gradient(top, #fff 0%, #859398 100%);
-  background: linear-gradient(to bottom, #fff 0%, #859398 100%);
+  background: -moz-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #d4d4d4));
+  background: -webkit-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: -o-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: -ms-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: linear-gradient(to bottom, #fff 0%, #d4d4d4 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); }
 
 .sticky {
@@ -70,7 +70,8 @@ body {
   top: 4px;
   left: -50px;
   right: -50px;
-  bottom: -50px; }
+  bottom: -50px;
+  pointer-events: none; }
 
 .title {
   position: relative;
@@ -109,7 +110,7 @@ p {
   justify-content: space-around;
   margin: auto;
   padding: 2em 0em;
-  padding-top: 12em; }
+  pointer-events: auto; }
   @media screen and (max-width: 27em) {
     #site-header nav {
       display: inline-block;
@@ -153,23 +154,24 @@ p {
       font-size: 2.9rem; } }
 
 .projects-wrapper {
-  -webkit-filter: blur(3px);
-  filter: blur(3px); }
+  height: 100vh;
+  background: #fff;
+  background: -moz-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #d4d4d4));
+  background: -webkit-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: -o-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: -ms-linear-gradient(top, #fff 0%, #d4d4d4 100%);
+  background: linear-gradient(to bottom, #fff 0%, #d4d4d4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); }
 
 #projects {
   height: auto;
   min-height: 27em;
-  background: #757575;
-  background: -moz-linear-gradient(top, #757575 0%, #abbaab 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #757575), color-stop(100%, #abbaab));
-  background: -webkit-linear-gradient(top, #757575 0%, #abbaab 100%);
-  background: -o-linear-gradient(top, #757575 0%, #abbaab 100%);
-  background: -ms-linear-gradient(top, #757575 0%, #abbaab 100%);
-  background: linear-gradient(to bottom, #757575 0%, #abbaab 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   max-width: 55em;
   margin: auto;
-  display: flex; }
+  display: flex;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5); }
   #projects p {
     flex-wrap: wrap; }
 
@@ -244,15 +246,23 @@ p {
   background-color: #abbaab; }
 
 .testimonials-wrapper {
-  height: 52em;
-  padding: 16em; }
+  height: 100vh;
+  background: #d4d4d4;
+  background: -moz-linear-gradient(top, #d4d4d4 0%, #fff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d4d4d4), color-stop(100%, #fff));
+  background: -webkit-linear-gradient(top, #d4d4d4 0%, #fff 100%);
+  background: -o-linear-gradient(top, #d4d4d4 0%, #fff 100%);
+  background: -ms-linear-gradient(top, #d4d4d4 0%, #fff 100%);
+  background: linear-gradient(to bottom, #d4d4d4 0%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); }
 
 #testimonials-title {
   color: #47545D; }
 
 #testimonials {
   color: #fff;
-  width: 22em;
+  width: 55em;
+  height: 15.5em;
   margin: auto;
   margin-bottom: 3em;
   line-height: 1.5em;
@@ -265,6 +275,10 @@ p {
   background: -ms-linear-gradient(top, #abbaab 0%, #757575 100%);
   background: linear-gradient(to bottom, #abbaab 0%, #757575 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); }
+
+#testimonials-board {
+  width: 50%;
+  margin: auto; }
 
 .wrap {
   max-width: 78em;
