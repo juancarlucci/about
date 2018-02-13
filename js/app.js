@@ -358,9 +358,10 @@ var stickyNav = function() {
   if (scrollTop > stickyNavTop) {
     pageNavElement.addClass("sticky", 800);
     siteHeaderElement.css( "width", "100%" );
-    siteHeaderElement.css( "padding-bottom", "4em" );
+    siteHeaderElement.css( "padding-top", "0" );
   } else {
     pageNavElement.removeClass("sticky");
+    siteHeaderElement.css( "padding-top", "12em" );
   }
 };
 

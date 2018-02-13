@@ -66,15 +66,15 @@ body {
   overflow: hidden;
   filter: blur(13px);
   position: absolute;
-  height: 300px;
-  top: 426px;
+  height: 230px;
+  top: 4px;
   left: -50px;
   right: -50px;
   bottom: -50px; }
 
 .title {
   position: relative;
-  top: -174px; }
+  top: -260px; }
 
 header {
   grid-area: header;
@@ -84,8 +84,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  padding-bottom: 3%; }
+  background-attachment: fixed; }
   header h1 {
     color: #47545D;
     font-size: 2.9em;
@@ -110,7 +109,7 @@ p {
   justify-content: space-around;
   margin: auto;
   padding: 2em 0em;
-  padding-bottom: 11em; }
+  padding-top: 12em; }
   @media screen and (max-width: 27em) {
     #site-header nav {
       display: inline-block;
