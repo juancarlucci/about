@@ -1,6 +1,7 @@
-#projects-title, #testimonials-title {
+#projects-title, #testimonials-title, form h2 {
   padding: 3em;
-  text-align: center; }
+  text-align: center;
+  font-size: 2.3em; }
 
 * {
   box-sizing: border-box; }
@@ -57,7 +58,7 @@ body {
   height: 243px;
   width: 100%;
   overflow: hidden;
-  background-color: #fff6;
+  background-color: #ffffff99;
   position: absolute;
   top: 369px; }
 
@@ -87,8 +88,9 @@ header {
   background-position: center;
   background-attachment: fixed; }
   header h1 {
-    color: #47545D;
+    color: #4e4d47;
     font-size: 2.9em;
+    letter-spacing: 0.05em;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     background: #47545D;
@@ -261,7 +263,7 @@ p {
 
 #testimonials {
   color: #fff;
-  width: 55em;
+  max-width: 55em;
   height: 15.5em;
   margin: auto;
   margin-bottom: 3em;
@@ -292,8 +294,6 @@ form {
   margin-bottom: 6em; }
 
 form h2 {
-  margin: auto;
-  padding: 3em;
   color: #fff; }
 
 form .input {
@@ -319,12 +319,6 @@ form .input {
 .input {
   margin: 1em 0 1em;
   border: 0.063em solid gray; }
-
-.submit {
-  background-color: #47545D;
-  color: #fff;
-  width: 100%;
-  text-align: left; }
 
 footer {
   grid-area: footer;
@@ -353,6 +347,7 @@ footer {
     text-transform: uppercase;
     border: 0.063em solid gray;
     height: 3em;
+    width: 7em;
     margin: 2em;
     transition: all 1s;
     -webkit-transition: all 1s; }

@@ -2,10 +2,14 @@
 $fontMain: "Montserrat",sans-serif
 $fontPara: "Open Sans",sans-serif
 
+$headlinesColor: #4e4d47
+
+
 //EXTENDS/INHERITANCE
 %title-shared
   padding: 3em
   text-align: center
+  font-size: 2.3em
 
 
 //queries
@@ -93,7 +97,7 @@ body
   height: 243px
   width: 100%
   overflow: hidden
-  background-color: #fff6
+  background-color: #ffffff99
   position: absolute
   top: 369px
 
@@ -129,8 +133,9 @@ header
   background-attachment: fixed
 
   h1
-    color: #47545D
+    color: $headlinesColor
     font-size: 2.9em
+    letter-spacing: 0.05em
     font-family: $fontMain
     text-transform: uppercase
     background:  #47545D
@@ -381,7 +386,7 @@ p
 
 #testimonials
   color: #fff
-  width: 55em
+  max-width: 55em
   height: 15.5em
   margin: auto
   margin-bottom: 3em
@@ -413,8 +418,7 @@ form
   margin-bottom: 6em
 
 form h2
-  margin: auto
-  padding: 3em
+  @extend %title-shared
   color: #fff
 
 form .input
@@ -444,11 +448,11 @@ form .input
   margin: 1em 0 1em
   border: 0.063em solid gray
 
-.submit
-  background-color: #47545D
-  color: #fff
-  width: 100%
-  text-align: left
+// .submit
+//   background-color: #47545D
+//   color: #fff
+//   width: 3em
+//   text-align: left
 
 
 footer
@@ -471,6 +475,7 @@ footer
     text-transform: uppercase
     border: 0.063em solid gray
     height: 3em
+    width: 7em
     margin: 2em
     transition: all 1s
     -webkit-transition: all 1s
