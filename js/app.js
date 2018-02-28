@@ -153,6 +153,8 @@ var createSkillsList = function(obj) {
 var createStoryboard = function(obj) {
   let storyBoardsArray = [];
   var storyboard;
+// TODO: I'd recommend using either var or let/const. Blending the two is a bit awkward.
+// TODO: also, I couldn't see results in your storyboard.
 
 
   for(prop in obj){

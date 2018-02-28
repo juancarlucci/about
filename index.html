@@ -32,6 +32,8 @@
 </head>
 
 <body>
+  <!-- TODO: Overall, really nice use of semantic html, pretty css design, great deliverables. I would suggest going for an mvp approach as you begin your projects, and then add functionality or new tech slowly. -->
+  <!-- TODO: There is a lot going on in your app.js, and some errors I'm seeing with the storyboard. I suggest trying to refactor your code so it's simpler and still effective. I'd also recommend removing your commented out code for readability reasons. -->
   <div id="home" class="wrapper docScroller target">
    <div class="page">
      <a class="hamburger hide" href=""><i class="fa fa-bars"></i></a>
@@ -44,6 +46,7 @@
             <a href="#about" data-scroll="about">about</a>
             <a href="#testimonials-title" data-scroll="testimonials">testimonials</a>
             <a href="#footer" data-scroll="footer">skills</a>
+            <!-- TODO: your skills section takes you to the footer, which has a contact form. That is a bit confusing. -->
           </nav>
           <div class="blur"></div>
             <div class="title">
@@ -100,6 +103,7 @@
 </div><!-- end wrapper-->
 
 <section id="about" class="target" data-anchor="about">
+  <!-- TODO: You have used the storyboard-container id twice! Here and in your storyboard section under the footer.-->
   <div id="storyboard-container" class="grid-container"></div>
 </section>
 
@@ -125,7 +129,7 @@
       </section>
       </div>
     </footer>
-
+    <!--TODO: What's this storyboard section doing under the footer?  -->
     <section>
       <div id="storyboard-container" class="grid-container"></div>
     </section>
